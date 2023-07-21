@@ -9,10 +9,14 @@ from eralchemy2 import render_er
 
 Base = declarative_base()
 
+
+
 class MediaType(enum.Enum):
     IMAGE = 'image'
     VIDEO = 'video'
 
+
+# Tabla y Tabla intermedia para relacionar muchos a muchos
 
 followers = Table('followers',
     Base.metadata,         
@@ -33,6 +37,8 @@ class User(Base):
 class Follower(Base):
     __tablename__= 'follower'
     id = Column(Integer, primary_key = True )
+
+# -----------------------------------------------
 
 
 class Post(Base):
